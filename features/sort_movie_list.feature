@@ -23,7 +23,16 @@ Background: movies have been added to database
 
 Scenario: sort movies alphabetically
   # your steps here
+  When I check the following ratings: PG, R, PG-13, G
+  And I press "Refresh"  
+  And I follow "Movie Title"
+  Then I should see "Aladdin" before "Amelie"
 
 Scenario: sort movies in increasing order of release date
+  When I check the following ratings: PG, R, PG-13, G
+  And I press "Refresh"  
+  And I follow "Release Date"
+  Then I should see "Aladdin" before "Chicken Run"
   # your steps here
+  
 
